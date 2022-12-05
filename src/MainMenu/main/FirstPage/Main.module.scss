@@ -1,0 +1,53 @@
+.Main {
+  width: 100%;
+  .restoranName {
+    width: 856px;
+    height: 600px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-size: 44px;
+    margin-left: 200px;
+  }
+
+  .mainPhoto {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 749px;
+    background: url("../../files/Rectangle.png") no-repeat center top / cover;
+    background-repeat: no-repeat;
+
+    .textMenu {
+      width: 499px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-right: 100px;
+
+      .btnTextMenu {
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: white;
+      }
+      .btnBron {
+        background-color: #b59571;
+        color: white;
+        width: 165px;
+        height: 42px;
+        font-size: 18px;
+        border: none;
+        transition: all 500ms ease;
+        &:hover {
+          background: rgba(0, 0, 0, 0);
+          color: #ffffff;
+          box-shadow: inset 0 0 0 3px #b59571;
+        }
+      }
+    }
+  }
+}
