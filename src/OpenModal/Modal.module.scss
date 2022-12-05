@@ -1,0 +1,133 @@
+.parentModal {
+
+  // .opacity_block {
+  //   background: url("../OpenModal/filesModal/Rectangle30.png")
+  //   no-repeat center top / cover;
+  //   background-repeat: no-repeat;
+
+    .backgroundPhoto {
+      height: 100vh;
+      width: 100%;
+      // background-color: rgba(0, 0, 0, 0.4);
+      // position: relative;
+      // z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .bookingWindow {
+        width: 22%;
+        height: 60%;
+        background-color: #333333;
+        z-index: 20;
+
+        .divX {
+          display: flex;
+          justify-content: end;
+
+          .imgX {
+            cursor: pointer;
+          }
+        }
+
+        .divLogo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          
+        }
+
+        .divTextBooking {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 13%;
+
+          .textBooking {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        
+        .divInpName {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .inpName {
+            width: 70%;
+            height: 35px;
+            background-color: #333333;
+            border: none;
+            border: 1px solid white;
+            color: white;
+          }
+        }
+
+        .divInpPhone {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .inpPhone {
+            width: 70%;
+            height: 35px;
+            background-color: #333333;
+            border: none;
+            border: 1px solid white;
+            color: white;
+          }
+        }
+
+        .divBtnTableAndTime {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          grid-column-gap: 32px;
+
+          .btnTable {
+            width: 30%;
+            height: 35px;
+            background-color: #333333;
+            border: none;
+            border: 1px solid white;
+            color: white;
+          }
+
+          .btnTime {
+            width: 30%;
+            height: 35px;
+            background-color: #333333;
+            color: white;
+            border: none;
+            border: 1px solid white;
+            color: white;
+          }
+        }
+
+        .divBtnBooking {
+          height: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .btnBooking {
+            width: 50%;
+            height: 40px;
+            background-color: #B59571;
+            color: white;
+            font-weight: 400;
+            border: none;
+          }
+        }
+      }
+    }
+  // } 
+}
+
+

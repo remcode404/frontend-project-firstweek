@@ -1,0 +1,76 @@
+.parentDiv {
+    width: 100%;
+    height: 100vh;
+    background-color: #333333;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .frame1 {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+        // .imgLogo {}
+
+        .xParent {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 60px;
+
+            // .imgX {}
+        }
+    }
+
+    .frame2 {
+        display: grid;
+        justify-content: center;
+        height: 45vh;
+
+        .textMenu {
+            cursor: pointer;
+            font-size: 38px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .textDelivery {
+            cursor: pointer;
+            font-size: 38px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .textPayment {
+            cursor: pointer;
+            font-size: 38px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btnTableReservation {
+            background-color: #B59571;
+            border: none;
+            font-size: 22px;
+            color: white;
+            font-weight: 600;
+            padding: 15px 30px;
+            height: 60px;
+        }
+    }
+
+    .frame3 {
+        display: flex;
+        justify-content: space-around;
+
+        // .imgYouTube {}
+
+        // .imgVK {}
+
+        // .imgTG {}
+    }
+}
