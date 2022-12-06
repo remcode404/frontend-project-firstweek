@@ -1,0 +1,146 @@
+.parentAuth {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .blockAuth {
+        width: 25%;
+        height: 70%;
+        background-color: #333333;
+
+        .blockX {
+            display: flex;
+            justify-content: flex-end;
+
+            .imgX {
+                cursor: pointer;
+            }
+        }
+
+        .divLogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            // .imgLogo {}
+        }
+
+        .blockTextAuth {
+            height: 12%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .textAuth {
+                color: white;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+
+        .blockName {
+            height: 11%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .inpName {
+                width: 70%;
+                height: 35px;
+                background-color: #333333;
+                border: none;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+
+        .divPhone {
+            height: 11%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .inpPhone {
+                width: 70%;
+                height: 35px;
+                background-color: #333333;
+                border: none;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+        
+        .divEmail {
+            height: 11%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .inpEmail {
+                width: 70%;
+                height: 35px;
+                background-color: #333333;
+                border: none;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+
+        .divPassword {
+            height: 11%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .inpPassword {
+                width: 70%;
+                height: 35px;
+                background-color: #333333;
+                border: none;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+
+        .blockBtnAuth {
+            height: 13%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            .btnAuth {
+                width: 60%;
+                height: 40px;
+                background-color: #B59571;
+                color: white;
+                font-weight: 400;
+                border: none;
+            }
+        }
+
+        .blockLoginBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+
+            .textLogin {
+                font-size: 15px;
+                color: rgb(206, 205, 205);
+            }
+
+            .btnLogin {
+                font-size: 16px;
+                color: rgb(206, 205, 205);
+                background-color: #333333;
+                border: none;
+                font-weight: 600;
+                text-decoration: underline;
+            }
+        }
+    }
+}
