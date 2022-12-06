@@ -1,5 +1,14 @@
 .Main {
   width: 100%;
+
+  .openMenuWindow{
+  width: 100%;
+  position: absolute;
+  }
+  .openModalWindow{
+    position: absolute;
+    width: 100%;
+  }
   .restoranName {
     width: 856px;
     height: 600px;
@@ -12,6 +21,8 @@
   }
 
   .mainPhoto {
+  position: relative;
+  
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -51,3 +62,4 @@
     }
   }
 }
+

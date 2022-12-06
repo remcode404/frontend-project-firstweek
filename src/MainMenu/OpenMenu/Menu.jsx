@@ -1,18 +1,22 @@
 import React from "react";
 import styles from "./Menu.module.scss";
-import logotip from "../OpenMenu/files/logo.png";
-import x from "../OpenMenu/files/eva_close-fill.png";
-import logoYouTube from "../OpenMenu/files/Group.png";
-import logoVK from "../OpenMenu/files/Vector (4).png";
-import logoTG from "../OpenMenu/files/Vector (5).png";
+import logotip from "./files/logo.png";
+import x from "./files/eva_close-fill.png";
+import logoYouTube from "./files/Group.png";
+import logoVK from "./files/Vector (4).png";
+import logoTG from "./files/Vector (5).png";
 
-function Menu() {
+function Menu({setMenuWindow, menuWindow }) {
+  const handleOpenWindow = () => {
+    setMenuWindow(!menuWindow)
+  }
+  
   return (
     <div className={styles.parentDiv}>
       <div className={styles.frame1}>
         <img src={logotip} alt="logo" className={styles.imgLogo} />
 
-        <div className={styles.xParent}>
+        <div  onClick={() => handleOpenWindow()} className={styles.xParent}>
           <img src={x} alt="x" className={styles.imgX} />
         </div>
 
