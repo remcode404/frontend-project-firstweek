@@ -1,16 +1,9 @@
 .parentModal {
 
-  // .opacity_block {
-  //   background: url("../OpenModal/filesModal/Rectangle30.png")
-  //   no-repeat center top / cover;
-  //   background-repeat: no-repeat;
-
-    .backgroundPhoto {
+.backgroundPhoto {
       height: 100vh;
       width: 100%;
-      // background-color: rgba(0, 0, 0, 0.4);
-      // position: relative;
-      // z-index: 3;
+    
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,7 +16,7 @@
 
         .divX {
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
 
           .imgX {
             cursor: pointer;
@@ -127,7 +120,7 @@
         }
       }
     }
-  // } 
+  
 }
 
 

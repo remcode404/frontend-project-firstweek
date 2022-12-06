@@ -5,9 +5,15 @@ import Footer from "./footer/Footer";
 function AppMain() {
   return (
     <div className={style.AppMain}>
-      <Main id={style.sec1} />
-      <AboutRestaurant id={style.sec2} />
-      <Footer />
+      <div className={style.Main}>
+        <Main />
+      </div>
+      <div className={style.aboutRestaurant}>
+        <AboutRestaurant  />
+      </div>
+      <div className={style.footer}>
+        <Footer />
+      </div>
     </div>
   );
 }

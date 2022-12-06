@@ -1,9 +1,12 @@
 import React from "react";
-import styles from "../OpenModal/Modal.module.scss";
-import xDelete from '../OpenModal/filesModal/eva_close-fill.png'
-import logo from '../OpenModal/filesModal/logo.png'
+import styles from "./Modal.module.scss";
+import xDelete from './filesModal/eva_close-fill.png'
+import logo from './filesModal/logo.png'
 
-function Modal() {
+function ModalWindow({setModalWindow, modalWindow}) {
+  const handleOpenWindow = () => {
+    setModalWindow(!modalWindow)
+  }
   return (
     <div className={styles.parentModal}>
       <div className={styles.opacity_block}>
@@ -11,7 +14,7 @@ function Modal() {
 
         <div className={styles.bookingWindow}>
 
-            <div className={styles.divX}>
+            <div  onClick={() => handleOpenWindow()} className={styles.divX}>
                 <img src={xDelete} alt="x" className={styles.imgX} />
             </div>
 
@@ -48,4 +51,4 @@ function Modal() {
   );
 }
 
-export default Modal;
+export default ModalWindow;
