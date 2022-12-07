@@ -8,10 +8,6 @@ function ModalWindow({ setModalWindow, modalWindow }) {
   const [openWindowDate, setOpenWindowDate] = useState(false);
   const [dataBooking, setDataBooking] = useState({})
 
-  const forDataBook = {
-    
-  }
-
   console.log(dataBooking);
 
   const handleOpenWindowDate = () => {
