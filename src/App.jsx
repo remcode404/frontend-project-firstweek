@@ -1,7 +1,4 @@
 import './App.scss';
-// import AppMain from "./MainMenu/AppMain";
-import Window from './Authorization/AuthorizationWindow/Window';
-// import Entry from "./Authorization/EntryWindow/Entry";=
 
 import AppMain from './MainMenu/AppMain';
 import { Routes, Route } from 'react-router-dom';

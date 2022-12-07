@@ -15,14 +15,12 @@ function ModalWindow({ setModalWindow, modalWindow }) {
   const [numberTable, setNumberTable] = useState(1)
   
   const dispatch = useDispatch();
-
   useEffect(()=>{
     dispatch(fetchBooking())
     if(true){
       setDataBooking({ numberTable: '1', nameUser: name, numberUser: number, date: dateTime.date, time: dateTime.time})
     }
   }, [dispatch, dateTime, name, number])
-
 
   const handleOpenWindowDate = () => {
     setOpenWindowDate(true);
