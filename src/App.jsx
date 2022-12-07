@@ -3,12 +3,16 @@ import './App.scss';
 import Window from './Authorization/AuthorizationWindow/Window';
 // import Entry from "./Authorization/EntryWindow/Entry";=
 
+import AppMain from './MainMenu/AppMain';
+import { Routes, Route } from 'react-router-dom';
+import ProductPage from './pages/ProductPage';
 function App() {
   return (
     <div className="app">
-      {/* <AppMain /> */}
-      <Window />
-      {/* <Entry /> */}
+      <Routes>
+        <Route path="/" element={<AppMain />} />
+        <Route path="/products" element={<ProductPage />} />
+      </Routes>
     </div>
   );
 }
