@@ -1,0 +1,141 @@
+.booking {
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  color: white;
+  border: 1px solid #5b5b5b;
+}
+
+.date_booking {
+  width: 55%;
+  padding: 20px;
+  border-right: 1px solid #5b5b5b;
+  border-bottom: 1px solid #5b5b5b;
+}
+
+.switchMonth {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  .month_substract {
+    background-color: #B59571;
+    outline: none;
+    border: none;
+    color: white;
+    width: 35px;
+  }
+  .month_year {
+
+  }
+  .month_add {
+    background-color: #B59571;
+    outline: none;
+    border: none;
+    color: white;
+    width: 35px;
+  }
+}
+
+.calendar {
+  .error_date {
+    color: white;
+    margin-top: 25px;
+    margin-left: 15px;
+    line-height: 0px;
+  }
+}
+
+.week_switch {
+}
+
+.booking_days {
+  height: 245px;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  background-color: transparent;
+  .switchMonthButton {
+    text-align: center;
+    width: 30px;
+    border: 1px solid #5b5b5b;
+    margin: 5px;
+    color: white;
+    background-color: transparent;
+    &:hover {
+      background-color: #494949;
+    }
+    &:active {
+      background-color: #303030;
+    }
+  }
+}
+
+.week_booking {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 7px;
+  .day_select {
+    text-align: center;
+    width: 30px;
+    font-size: 18px;
+    margin: 5px;
+  }
+}
+
+.time_booking {
+  position: relative;
+  width: 45%;
+  padding: 20px;
+  border-right: 1px solid #5b5b5b;
+  border-bottom: 1px solid #5b5b5b;
+  .close_window_but {
+    color: #B59571;
+    font-size: 30px;
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    right:5px;
+    top: 0px;
+  }
+}
+
+.time_select {
+  width: 100%;
+}
+
+.selectTimeButton {
+  text-align: center;
+  width: 60px;
+  border: 1px solid #5b5b5b;
+  margin: 5px;
+  color: white;
+  background-color: transparent;
+  &:hover {
+    background-color: #494949;
+  }
+  &:active {
+    background-color: #303030;
+  }
+}
+
+.submit_data {
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-right: 1px solid #5b5b5b;
+  border-bottom: 1px solid #5b5b5b;
+  .submit_data_button {
+    background-color: #B59571;
+    color: white;
+    width: 200px;
+    border: none;
+    outline: none;
+  }
+}
+
+
+
+
