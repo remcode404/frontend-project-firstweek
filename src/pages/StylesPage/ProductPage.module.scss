@@ -1,7 +1,113 @@
 .mainProductPage{
 display: flex;
+ width: 100%;
+ height: 750px;
+ justify-content: space-between;
+
+ .openMenuWindow{
+    width: 100%;
+    position: absolute;
+    
+    }
+.content{
+    display: flex;
+width: 85%;
+height: 750px;
+flex-direction: column;
+margin-top: 50px;
+margin-left: 90px;
+.categories{
+display: flex;
 width: 100%;
+height: 20px;
+justify-content: space-around;
+right: 90px;
+.category{
+width: 100px;
+height: 30px;
+align-items: center;
+justify-content: center;
+display: flex;
+border: none;
+background: none;
+border: 1px solid black;
+border-radius: 50px;
+transition: 0.5s;
+&:hover{
+background-color: #b08e67;
+border: none;
+color: white;
+}
+}
+}
+.products{
+    margin-left: 120px;
+    margin-top: 60px;
+    display: flex;
+width: 100%;
+height: 750px;
+overflow-y: scroll;
+flex-wrap: wrap;
+&::-webkit-scrollbar { width: 0; }
+
+.itemProduct{
+  
+width: 195px;
+height: 270px;
+margin: 20px;
+display: flex;
+flex-direction: column;
 justify-content: space-between;
+}
+.ItemName{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #b08e67;
+    font-size: 18px;
+}
+.priceAndButton{
+display: flex;
+width: 100%;
+height: 50px;
+justify-content: space-between;
+align-items: center;
+
+.basketButton{
+width: 90px;
+margin-bottom: 10px;
+background: none;
+background-color: #B59571;
+color: white;
+height: 30px;
+border: none;
+border-radius: 10px;
+transition: 0.5s;
+&:hover{
+border: 1px solid  #B59571;
+color: #b08e67;
+border-radius: 20px;
+background-color: white;
+}
+}
+    .ItemPrice{
+        width: 20%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 25px;
+        height: 50px;
+        align-items: center;
+    }
+}
+    .img{
+    width: 100%;
+    height: 150px;
+    border-radius: 30px;
+    }
+}
+
+}
 .contentMenuProduct{
 display: flex;
 width: 200px;
