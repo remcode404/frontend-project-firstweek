@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./Main.module.scss";
 
 function TextMenuMainPage({ modalWindow, setModalWindow }) {
@@ -6,7 +7,9 @@ function TextMenuMainPage({ modalWindow, setModalWindow }) {
   };
   return (
     <div className={style.textMenu}>
+      <Link to='/products' >
       <button className={style.btnTextMenu}>Меню</button>
+      </Link>
       <button className={style.btnTextMenu}>Доставка</button>
       <button className={style.btnTextMenu}>О нас</button>
       <button onClick={() => handleOpenWindow()} className={style.btnBron}>
