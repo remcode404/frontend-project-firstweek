@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import localization from 'moment/locale/ru';
 import style from './dateTimeSelect.module.scss';
+import { useSelector } from 'react-redux';
 
-const BookingTable = () => {
-  const [date, setDate] = useState('');
+const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
   const [day, setDay] = useState('');
   const [monthYear, setMonthYear] = useState(moment().format('MM-YYYY'));
   const [time, setTime] = useState('09:00');
-  const [nowTime, setNowTime] = useState(moment().format('HH:mm:ss'));
+  const [date, setDate] = useState('');
+  const [nowTime, setNowTime] = useState(moment().format('HH:mm'));
   const [isEqualDate, setIsEqualDate] = useState(false);
 
   moment.locale('ru', localization);
+
+  const data = useSelector((state) => state.bookingReducer.booking);
 
   const defaultProps = {
     weekDayNames: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -100,22 +103,25 @@ const BookingTable = () => {
     }
   };
 
-  const dateInDB = {
-    numberTable: 1,
-    date: '',
-    time: '',
-  };
-
   useEffect(() => {
     if (day) {
       setDate(day.toString() + '-' + monthYear.toString());
     }
   }, [monthYear, day]);
+
   setInterval(() => {
     setNowTime(moment().format('HH:mm'));
   }, 1000);
 
-  const handleSubmitData = () => {};
+  const handleSubmitData = () => {
+    if(true){
+      setDateTime({ time, date })
+    }
+  };
+
+  const handleCloseWindow = () => {
+    setOpenWindowDate(false);
+  };
 
   return (
     <div>
@@ -146,13 +152,14 @@ const BookingTable = () => {
           </div>
         </div>
         <div className={style.time_booking}>
-          <button className={style.close_window_but}>x</button>
+          <button className={style.close_window_but} onClick={handleCloseWindow}>
+            x
+          </button>
           <p className={style.selectedTime}>{`Выбранное время: ${time}`}</p>
           <div className={style.time_select}>{printTimeInDays()}</div>
         </div>
       </div>
       <div className={style.submit_data}>
-        
         <button className={style.submit_data_button} onClick={handleSubmitData}>
           Отправить дату и время
         </button>
