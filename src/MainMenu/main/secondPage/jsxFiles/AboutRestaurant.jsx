@@ -1,5 +1,5 @@
 import styles from "../scssFiles/AboutRestaurant.module.scss";
-import ContactsComponent from "./Contacts";
+import ContactsComponent from "../../../../components/Contacts";
 import DeliveryService from "./DeliveryService";
 import MenuComponent from "./MenuComponent";
 function AboutRestaurant() {
