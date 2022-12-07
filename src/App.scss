@@ -1,1 +1,4 @@
 @import "~bootstrap/scss/bootstrap"; 
+*::selection {
+  background-color: orange;
+}
