@@ -1,4 +1,5 @@
 import "./App.scss";
+
 import AppMain from "./MainMenu/AppMain";
 import { Routes, Route } from "react-router-dom";
 import ProductPage from "./pages/ProductPage";

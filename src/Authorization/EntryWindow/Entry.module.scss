@@ -1,0 +1,91 @@
+.entryParent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .blockEntry {
+        width: 23%;
+        height: 50%;
+        background-color: #333333;
+
+        .divX {
+            display: flex;
+            justify-content: flex-end;
+    
+            .imgX {
+                cursor: pointer;
+            }
+        }
+    
+        .divLogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            // .imgLogo {}
+        }
+    
+        .blockEntryText {
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .entryText {
+                color: white;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+    
+        .blockInpLogin {
+            height: 16%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .inpLogin {
+                width: 70%;
+                height: 35px;
+                background-color: #333333;
+                border: none;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+    
+        .blockInpPassword {
+            height: 12%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .inpPassword {
+                width: 70%;
+                height: 35px;
+                background-color: #333333;
+                border: none;
+                border: 1px solid white;
+                color: white;
+            }
+        }
+    
+        .blockBtnEntry {
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+    
+            .btnEntry {
+                width: 60%;
+                height: 40px;
+                background-color: #B59571;
+                color: white;
+                font-weight: 400;
+                border: none;
+            }
+        }
+    }
+}
