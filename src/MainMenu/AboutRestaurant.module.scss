@@ -1,0 +1,17 @@
+.AddMain{
+    overflow-x: auto;
+ 
+  scroll-snap-type: y mandatory;
+.Main{
+    justify-content: center;
+}
+    .aboutRestaurant{
+        scroll-snap-align: start;
+
+    }
+
+    .footer{
+        scroll-snap-align: end;
+    }
+
+}

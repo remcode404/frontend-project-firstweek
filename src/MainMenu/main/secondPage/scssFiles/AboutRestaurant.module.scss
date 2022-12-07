@@ -1,0 +1,68 @@
+.our {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  margin-top: 70px;
+  .aboutRestaurant {
+    margin: 0 auto;
+    width: 80%;
+
+    .ourRestaurant {
+      display: flex;
+      width: 100%;
+      //   border: 1px solid black;
+
+      .header {
+        width: 12%;
+        position: absolute;
+
+        .restaurantText {
+          display: flex;
+          justify-content: space-around;
+          width: 100%;
+          // margin-left: 90px;
+          font-size: 20px;
+          align-self: flex-start;
+          .line {
+            width: 60px;
+            height: 2px;
+            background: #b59571;
+            color: #b59571;
+          }
+        }
+      }
+
+      .nameAndDescription {
+        display: flex;
+        justify-content: space-between;
+        // border: 1px solid black;
+        width: 90%;
+        .nameRestaurant {
+          width: 50%;
+          height: 100%;
+          //   border: 1px solid black;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          h2 {
+            font-size: 61px;
+            width: 20%;
+          }
+        }
+
+        .restaurantDescription {
+          width: 50%;
+          height: 100%;
+          //   border: 1px solid black;
+          font-size: 18px;
+          display: flex;
+          align-items: flex-end;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
