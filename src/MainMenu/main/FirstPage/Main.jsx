@@ -32,7 +32,7 @@ function Main() {
           ) : null}
         </div>
         <h1 className={styles.restoranName}>
-          Видовой ресторан Food Exxe Relo на Крестовском острове
+          Видовой ресторан Food Exxe Relo на Крестовском острове.
         </h1>
         <TextMenuMainPage
           setModalWindow={setModalWindow}

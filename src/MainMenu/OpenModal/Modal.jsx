@@ -31,6 +31,7 @@ function ModalWindow({ setModalWindow, modalWindow }) {
     }
   }, [dispatch, dateTime, name, number]);
 
+
   const handleOpenWindowDate = () => {
     setOpenWindowDate(true);
   };
