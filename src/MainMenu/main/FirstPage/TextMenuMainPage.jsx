@@ -14,17 +14,15 @@ function TextMenuMainPage({ modalWindow, setModalWindow }) {
         whileTap={{ scale: 0.9 }} 
         className={style.btnTextMenu}>Меню</motion.button>
       </Link>
-
       <motion.button 
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }} 
-        className={style.btnTextMenu}>Доставка</motion.button>
-
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }} 
+      className={style.btnTextMenu}>Войти</motion.button>
+      
       <motion.button 
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }} 
         className={style.btnTextMenu}>О нас</motion.button>
-
       <motion.button 
         whileHover={{ scale: 1 }}
         whileTap={{ scale: 0.9 }} 
