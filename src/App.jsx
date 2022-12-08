@@ -1,6 +1,7 @@
-import './App.scss';
-
-import AppMain from './MainMenu/AppMain';
+import "./App.scss";
+import AppMain from "./MainMenu/AppMain";
+import Window from "./Authorization/AuthorizationWindow/Window";
+import Entry from "./Authorization/EntryWindow/Entry";
 import { Routes, Route } from 'react-router-dom';
 import ProductPage from './pages/ProductPage';
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AppMain />} />
         <Route path="/products" element={<ProductPage />} />
+        <Route path="/entry" element={<Entry />} />
       </Routes>
     </div>
   );

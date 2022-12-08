@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import style from "./Main.module.scss";
+import { motion } from "framer-motion"
 
 function TextMenuMainPage({ modalWindow, setModalWindow }) {
   const handleOpenWindow = () => {
@@ -8,13 +9,26 @@ function TextMenuMainPage({ modalWindow, setModalWindow }) {
   return (
     <div className={style.textMenu}>
       <Link to='/products' >
-      <button className={style.btnTextMenu}>Меню</button>
+      <motion.button 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }} 
+        className={style.btnTextMenu}>Меню</motion.button>
       </Link>
-      <button className={style.btnTextMenu}>Войти</button>
-      <button className={style.btnTextMenu}>О нас</button>
-      <button onClick={() => handleOpenWindow()} className={style.btnBron}>
+      <motion.button 
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }} 
+      className={style.btnTextMenu}>Войти</motion.button>
+      
+      <motion.button 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }} 
+        className={style.btnTextMenu}>О нас</motion.button>
+      <motion.button 
+        whileHover={{ scale: 1 }}
+        whileTap={{ scale: 0.9 }} 
+        onClick={() => handleOpenWindow()} className={style.btnBron}>
         Забронировать
-      </button>
+      </motion.button>
     </div>
   );
 }
