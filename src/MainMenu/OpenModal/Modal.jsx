@@ -3,7 +3,7 @@ import styles from './Modal.module.scss';
 import xDelete from './filesModal/eva_close-fill.png';
 import logo from './filesModal/logo.png';
 import Booking from './Booking/DateTimeSelect';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBooking, fetchBooking } from '../../reducers/Slice/bookingSlice';
 import { motion } from "framer-motion";
 
@@ -13,7 +13,7 @@ function ModalWindow({ setModalWindow, modalWindow }) {
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
   const [dateTime, setDateTime] = useState({})
-  const [numberTable, setNumberTable] = useState(1)
+  // const [numberTable, setNumberTable] = useState(1)
   
   const dispatch = useDispatch();
   useEffect(()=>{
