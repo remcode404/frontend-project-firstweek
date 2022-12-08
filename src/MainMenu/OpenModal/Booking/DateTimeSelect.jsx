@@ -4,17 +4,20 @@ import localization from 'moment/locale/ru';
 import style from './dateTimeSelect.module.scss';
 import { useSelector } from 'react-redux';
 
-const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
+const BookingTable = ({ setOpenWindowDate, setDateTime, dateTime}) => {
   const [day, setDay] = useState('');
   const [monthYear, setMonthYear] = useState(moment().format('MM-YYYY'));
-  const [time, setTime] = useState('09:00');
+  const [time, setTime] = useState('00:00');
   const [date, setDate] = useState('');
   const [nowTime, setNowTime] = useState(moment().format('HH:mm'));
   const [isEqualDate, setIsEqualDate] = useState(false);
+  const [isEqualTime, setIsEqualTime] = useState(false);
 
   moment.locale('ru', localization);
 
   const data = useSelector((state) => state.bookingReducer.booking);
+
+  console.log(dateTime);
 
   const defaultProps = {
     weekDayNames: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -78,6 +81,7 @@ const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
 
   const handleSelectTime = (timeValue) => {
     setTime(timeValue);
+    setIsEqualTime(false)
   };
 
   const printTimeInDays = () => {
@@ -106,16 +110,29 @@ const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
   useEffect(() => {
     if (day) {
       setDate(day.toString() + '-' + monthYear.toString());
+      setIsEqualDate(false)
+      if(time !== '00:00') {
+        setIsEqualTime(false)
+      }
+      else {
+        setIsEqualTime(true)
+      }
     }
-  }, [monthYear, day]);
+  }, [monthYear, day, date]);
 
   setInterval(() => {
     setNowTime(moment().format('HH:mm'));
   }, 1000);
 
   const handleSubmitData = () => {
-    if(true){
+    if(dateTime.date !== '00-00-0000' || time !== '00:00'){
       setDateTime({ time, date })
+      setIsEqualDate(false)
+    }else{
+      setIsEqualDate(true)
+    }
+    if(time === '00:00') {
+      setIsEqualTime(true)
     }
   };
 
@@ -127,7 +144,7 @@ const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
     <div>
       <div className={style.booking}>
         <div className={style.date_booking}>
-          <p className={style.selectedDate}>{`Введенная дата: ${!date ? '00-00-0000' : date}`}</p>
+          <p className={style.selectedDate}>{`Введенная дата: ${!date ? dateTime.date : date}`}</p>
           <div className={style.calendar}>
             <div className={style.switchMonth}>
               <button className={style.month_substract} onClick={handleSubstractValueMonth}>
@@ -148,7 +165,8 @@ const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
               ))}
             </div>
             <div className={style.booking_days}>{printDaysInMonth()}</div>
-            {!isEqualDate && <p className={style.error_date}>Проверьте дату!!!</p>}
+            {isEqualDate && <p className={style.error_date}>Проверьте дату!!!</p>}
+            {isEqualTime && <p className={style.error_date}>Проверьте время!!!</p>}
           </div>
         </div>
         <div className={style.time_booking}>
