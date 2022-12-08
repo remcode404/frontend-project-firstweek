@@ -2,14 +2,42 @@ import React from "react";
 import styles from "../EntryWindow/Entry.module.scss";
 import entryX from "../EntryWindow/files/eva_close-fill.png";
 import logo from "../EntryWindow/files/logo.png";
+import { motion } from "framer-motion";
 
 function Entry() {
-  return (
-    <div className={styles.entryParent}>
-      <div className={styles.blockEntry}>
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
 
+  return (
+    <motion.div
+      drag
+      dragConstraints={{
+        top: -150,
+        left: -150,
+        right: 150,
+        bottom: 150,
+      }}
+      className={styles.entryParent}
+    >
+      <motion.div
+        variants={animationConfiguration}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 1.5 }}
+        className={styles.blockEntry}
+      >
         <div className={styles.divX}>
-          <img className={styles.imgX} src={entryX} alt="x" />
+          <motion.img
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            className={styles.imgX}
+            src={entryX}
+            alt="x"
+          />
         </div>
 
         <div className={styles.divLogo}>
@@ -37,11 +65,16 @@ function Entry() {
         </div>
 
         <div className={styles.blockBtnEntry}>
-          <button className={styles.btnEntry}>Войти</button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={styles.btnEntry}
+          >
+            Войти
+          </motion.button>
         </div>
-
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
