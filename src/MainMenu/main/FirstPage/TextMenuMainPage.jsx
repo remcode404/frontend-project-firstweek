@@ -10,7 +10,7 @@ function TextMenuMainPage({ modalWindow, setModalWindow }) {
       <Link to='/products' >
       <button className={style.btnTextMenu}>Меню</button>
       </Link>
-      <button className={style.btnTextMenu}>Доставка</button>
+      <button className={style.btnTextMenu}>Войти</button>
       <button className={style.btnTextMenu}>О нас</button>
       <button onClick={() => handleOpenWindow()} className={style.btnBron}>
         Забронировать

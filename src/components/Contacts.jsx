@@ -50,7 +50,7 @@ function ContactsComponent() {
             <div className={style.adresTime}>
               <div className={style.iconText}>
                 <div className={style.iconMapDiv}><img className={style.iconMap} src={iconMap} alt="f" /></div>
-                <p className={style.textAdress}>Санкт-Петербург, Северная дорога, 11 </p>
+                <p className={style.textAdress}>город Грозный, ул. Великого  Адама 7</p>
               </div>
               <div  className={style.iconText2}>
                <div className={style.iconTeleDiv}><img className={style.iconTele} src={iconTele} alt="d" /></div>  <p className={style.phoneNumber}>+7 (925) 807-89-79</p>
@@ -58,8 +58,8 @@ function ContactsComponent() {
               <p className={style.colorText}>Время работы</p>
               <p className={style.colorText}>Пн-Вск с 09:00 до 00:00</p>
               <div className={style.buttonsAdress}>
-                <dutton className={style.adressBtn}>Бронь столика</dutton>
-                <dutton className={style.adressBtn}>Задать вопрос</dutton>
+                <button className={style.adressBtn}>Бронь столика</button>
+                <button className={style.adressBtn}>Задать вопрос</button>
               </div>
             </div>
           </div>

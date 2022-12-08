@@ -2,12 +2,12 @@
 display: flex;
  width: 100%;
  height: 750px;
- justify-content: space-between;
-
+// background-color: #b08e67;
  .openMenuWindow{
     width: 100%;
     position: absolute;
     
+   
     }
 .content{
     display: flex;
@@ -16,6 +16,40 @@ height: 750px;
 flex-direction: column;
 margin-top: 50px;
 margin-left: 90px;
+
+.searchItem{
+width: 100%;
+display: flex;
+justify-content: center;
+height: 20px;
+
+margin-top: 50px;
+.liveSearch{
+width: 400px;
+height: 30px;
+border-radius: 20px;
+border: 1px solid  #b08e67;
+}
+}
+.allButton{
+width: 100px;
+height: 30px;
+justify-content: center;
+background: none;
+border: none;
+border: 1px solid black;
+border-radius: 20px;
+display: flex;
+align-items: center;
+background-color: white;
+&:hover{
+    border: none;
+background-color: #b08e67;
+
+    color: white;
+}
+
+}
 .categories{
 display: flex;
 width: 100%;
@@ -30,8 +64,9 @@ justify-content: center;
 display: flex;
 border: none;
 background: none;
-border: 1px solid black;
+border: 1px solid  #b08e67;
 border-radius: 50px;
+color:  #b08e67;
 transition: 0.5s;
 &:hover{
 background-color: #b08e67;
@@ -41,6 +76,7 @@ color: white;
 }
 }
 .products{
+
     margin-left: 120px;
     margin-top: 60px;
     display: flex;
@@ -48,16 +84,44 @@ width: 100%;
 height: 750px;
 overflow-y: scroll;
 flex-wrap: wrap;
-&::-webkit-scrollbar { width: 0; }
 
+
+.loader {
+    height: 30px;
+    width: 10px;
+    border-radius: 4px;
+    color:  #b08e67;
+    background: currentColor;
+    position: relative;
+    animation: ht 1s ease-in infinite alternate;
+    box-shadow: 15px 0 0 -1px , -15px 0 0 -1px ,
+                30px 0 0 -2px , -30px 0 0 -2px,
+                45px 0 0 -3px , -45px 0 0 -3px;
+                left: 750px;
+                bottom: 550px;
+                position: absolute;
+  }
+
+  @keyframes ht {
+    100% { height: 0px }
+  }
+
+
+
+
+
+
+&::-webkit-scrollbar { width: 0; }
 .itemProduct{
-  
 width: 195px;
 height: 270px;
 margin: 20px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+align-items: center;
+
+
 }
 .ItemName{
     width: 100%;
@@ -69,14 +133,15 @@ justify-content: space-between;
 }
 .priceAndButton{
 display: flex;
-width: 100%;
+width: 85%;
 height: 50px;
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
-
+border: 2px solid  #B59571;
+border-radius: 20px;
 .basketButton{
 width: 90px;
-margin-bottom: 10px;
+// margin-bottom: 10px;
 background: none;
 background-color: #B59571;
 color: white;
@@ -95,15 +160,20 @@ background-color: white;
         width: 20%;
         display: flex;
         justify-content: space-around;
+
         font-size: 25px;
         height: 50px;
-        align-items: center;
+        align-items: flex-end;
+        margin-bottom: 14px;
     }
 }
     .img{
-    width: 100%;
+    width:  195px;
     height: 150px;
     border-radius: 30px;
+border: 2px solid  #B59571;
+  
+
     }
 }
 

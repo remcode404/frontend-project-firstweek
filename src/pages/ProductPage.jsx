@@ -9,30 +9,59 @@ import { useEffect, useState } from "react";
 import { fetchCategory } from "../reducers/Slice/categorySlice";
 import { fetchProducts } from "../reducers/Slice/productSlice";
 import Menu from "../MainMenu/OpenMenu/Menu";
+import Lottie from "lottie-react";
 function ProductPage() {
   const dispatch = useDispatch();
-  const category = useSelector((state) => state.reducerCategory.category);
-  const products = useSelector((state) => state.reducerProduct.products);
-  const error = useSelector((state) => state.reducerProduct.error);
-
+  const category = useSelector((state) => state.categoryReducer.category);
+  const products = useSelector((state) => state.productSlice.products);
+  const error = useSelector((state) => state.productSlice.error);
+  const preloader = useSelector((state) => state.productSlice.loading);
+  const [search, setSearch] = useState("");
   const [menuWindow, setMenuWindow] = useState(false);
   const [modalWindow, setModalWindow] = useState(false);
-  console.log(products);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [sorted, setSorted] = useState([]);
+
+  const onClickCategory = (id) => {
+    setActiveIndex(id);
+    console.log(id);
+  };
+
+  // const sorted = products.filter((item) =>
+  //   !activeIndex ? item : item.categoryId[0] === activeIndex
+  // );
+
+  useEffect(() => {
+    dispatch(fetchCategory());
+    dispatch(fetchProducts());
+    setSorted(
+      products.filter((item) =>
+        !activeIndex ? item : item.categoryId[0] === activeIndex
+      )
+    );
+  }, [activeIndex, dispatch]);
+
+  const hundleSearch = (e) => {
+    setSearch(e.target.value);
+    e.preventDefault();
+  };
+
+  const filterR = sorted.filter((item) => {
+    return item.name.toLowerCase().includes(search.toLowerCase());
+  });
 
   if (error) {
     <h1>{error}</h1>;
   }
-  useEffect(() => {
-    dispatch(fetchCategory());
-    dispatch(fetchProducts());
-  }, [dispatch]);
+
   return (
     <>
       <div className={style.mainProductPage}>
-       
-       <SideMenuMainPage  setMenuWindow={setMenuWindow}
-          menuWindow={menuWindow} />
-        
+        <SideMenuMainPage
+          setMenuWindow={setMenuWindow}
+          menuWindow={menuWindow}
+        />
+
         <div className={style.openMenuWindow}>
           {" "}
           {menuWindow ? (
@@ -41,13 +70,37 @@ function ProductPage() {
         </div>
         <div className={style.content}>
           <div className={style.categories}>
+            <button
+              className={style.allButton}
+              onClick={() => setActiveIndex(null)}
+            >
+              Все
+            </button>
             {category.map((item) => (
-              <button className={style.category}>{item.name}</button>
+              <button
+                onClick={() => onClickCategory(item._id)}
+                key={item._id}
+                className={style.category}
+              >
+                {item.name}
+              </button>
             ))}
           </div>
+
+          <div className={style.searchItem}>
+            <input
+              className={style.liveSearch}
+              value={search}
+              type="text"
+              placeholder="поиск"
+              onChange={hundleSearch}
+            />
+          </div>
           <div className={style.products}>
-            {products.map((item) => (
-              <div className={style.itemProduct}>
+            {preloader ? <span class={style.loader}></span> : null}
+
+            {filterR.map((item) => (
+              <div key={item._id} className={style.itemProduct}>
                 <div>
                   <img className={style.img} src={item.img} alt="f" />
                 </div>

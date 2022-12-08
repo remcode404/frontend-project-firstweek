@@ -24,7 +24,7 @@ function Menu({ setMenuWindow, menuWindow }) {
 
       <div className={styles.frame2}>
         <Link className={styles.linkTextMenu} to="/">
-          <div className={styles.textMenu}>На главную.</div>
+          <div className={styles.textMenu}>На главную</div>
         </Link>
         <Link className={styles.linkMenu} to="/products">
           <div className={styles.textDelivery}>Меню</div>

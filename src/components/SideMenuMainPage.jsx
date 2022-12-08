@@ -4,9 +4,15 @@ import youtube from "../MainMenu/files/youtube.svg";
 import telegram from "../MainMenu/files/telegram.svg";
 import logo from "../MainMenu/files/logo.svg";
 import btnLogo from "../MainMenu/files/btnLogo.svg";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "../reducers/Slice/productSlice";
 
 function SideMenuMainPage({menuWindow, setMenuWindow }) {
-
+  const dispatch = useDispatch()
+useEffect(()=>{
+dispatch(fetchProducts())
+},[dispatch])
 const handleOpenWindow = () => {
   setMenuWindow(!menuWindow)
 }
@@ -23,9 +29,15 @@ const handleOpenWindow = () => {
       </div>
 
       <div className={styles.socialNetworks}>
-        <img className={styles.socialMedia} src={youtube} alt="" />
-        <img className={styles.socialMedia} src={vk} alt="" />
-        <img className={styles.socialMedia} src={telegram} alt="" />
+       
+         <a href="https://www.youtube.com/@user-ru8oy3op1s">
+         <img className={styles.socialMedia} src={youtube} alt="" />
+         </a>
+
+     
+        
+         <a href="https://vk.com/dukha_vaha">  <img className={styles.socialMedia} src={vk} alt="" /> </a>  
+       <a href="https://t.me/izn0795"> <img className={styles.socialMedia} src={telegram} alt="" />  </a>   
       </div>
     </div>
   );
