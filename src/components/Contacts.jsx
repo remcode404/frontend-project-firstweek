@@ -1,7 +1,7 @@
 import { YMaps, Map } from "react-yandex-maps";
-import style from "../scssFiles/Contacts.module.scss";
-import iconTele from "../../../files/iconTelephone.svg";
-import iconMap from "../../../files/iconMap.svg";
+import style from "./Contacts.module.scss";
+import iconTele from "../MainMenu/files/iconTelephone.svg";
+import iconMap from "../MainMenu/files/iconMap.svg";
 function ContactsComponent() {
   return (
     <div className={style.MapMain}>

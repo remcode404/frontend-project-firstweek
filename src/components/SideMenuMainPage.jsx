@@ -1,16 +1,23 @@
 import styles from "./Side.module.scss";
-import vk from "../../files/vk.svg";
-import youtube from "../../files/youtube.svg";
-import telegram from "../../files/telegram.svg";
-import logo from "../../files/logo.svg";
-import btnLogo from "../../files/btnLogo.svg";
+import vk from "../MainMenu/files/vk.svg";
+import youtube from "../MainMenu/files/youtube.svg";
+import telegram from "../MainMenu/files/telegram.svg";
+import logo from "../MainMenu/files/logo.svg";
+import btnLogo from "../MainMenu/files/btnLogo.svg";
 
-function SideMenuMainPage() {
+function SideMenuMainPage({menuWindow, setMenuWindow }) {
+
+const handleOpenWindow = () => {
+  setMenuWindow(!menuWindow)
+}
+
+
+//  console.log(MenuWindow)
   return (
     <div className={styles.sideMenu}>
       <div className={styles.logo}>
         <img className={styles.logos} src={logo} alt="" />
-        <button className={styles.btnLogo}>
+        <button onClick={() => handleOpenWindow()} className={styles.btnLogo}>
           <img className={styles.btnLogos} src={btnLogo} alt="" />
         </button>
       </div>
