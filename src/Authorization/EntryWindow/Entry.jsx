@@ -4,8 +4,15 @@ import { authSignIn } from "../../reducers/Slice/registrationSlice";
 import styles from "../EntryWindow/Entry.module.scss";
 import entryX from "../EntryWindow/files/eva_close-fill.png";
 import logo from "../EntryWindow/files/logo.png";
+import { motion } from "framer-motion";
 
-const Entry = () => {
+function Entry() {
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   const [value, setValue] = useState("");
   const [password, setPassword] = useState("");
   const error = useSelector((state) => state.registration.error);
@@ -36,10 +43,26 @@ const Entry = () => {
   };
 
   return (
-    <div className={styles.entryParent}>
-      <div className={styles.blockEntry}>
+    <motion.div drag
+    dragConstraints={{
+      top: -150,
+      left: -150,
+      right: 150,
+      bottom: 150,
+    }} className={styles.entryParent}>
+      <motion.div variants={animationConfiguration}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 1.5 }} className={styles.blockEntry}>
         <div className={styles.divX}>
-          <img className={styles.imgX} src={entryX} alt="x" />
+          <motion.img
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            className={styles.imgX}
+            src={entryX}
+            alt="x"
+          />
         </div>
 
         <div className={styles.divLogo}>
@@ -59,7 +82,6 @@ const Entry = () => {
               onChange={handleSetLogin}
             />
           </div>
-
           <div className={styles.blockInpPassword}>
             <input
               className={styles.inpPassword}
@@ -69,15 +91,15 @@ const Entry = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-
           <div className={styles.blockBtnEntry}>
-            <button className={styles.btnEntry} type="submit">
+            <motion.button whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }} className={styles.btnEntry} type="submit">
               Войти
-            </button>
-          </div>
+          </motion.button>
+        </div>
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -1,37 +1,88 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Modal.module.scss';
 import xDelete from './filesModal/eva_close-fill.png';
 import logo from './filesModal/logo.png';
 import Booking from './Booking/DateTimeSelect';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBooking, fetchBooking } from '../../reducers/Slice/bookingSlice';
+import { motion } from "framer-motion";
 
 function ModalWindow({ setModalWindow, modalWindow }) {
   const [openWindowDate, setOpenWindowDate] = useState(false);
-  const [dataBooking, setDataBooking] = useState({})
-
-  const forDataBook = {
-    
-  }
-
-  console.log(dataBooking);
+  const [dataBooking, setDataBooking] = useState({});
+  const [name, setName] = useState('')
+  const [number, setNumber] = useState('')
+  const [dateTime, setDateTime] = useState({})
+  const [numberTable, setNumberTable] = useState(1)
+  
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(fetchBooking())
+    if(true){
+      setDataBooking({ numberTable: '1', nameUser: name, numberUser: number, date: dateTime.date, time: dateTime.time})
+    }
+  }, [dispatch, dateTime, name, number])
 
   const handleOpenWindowDate = () => {
-    setOpenWindowDate(true)
+    setOpenWindowDate(true);
   };
 
   const handleOpenWindow = () => {
     setModalWindow(!modalWindow);
   };
+
+  const handleAddBooking = () => {
+    if(true){
+      dispatch(addBooking(dataBooking))
+    }
+    
+    console.log(dataBooking);
+  }
+
+  const handleChangeName = (e) => {
+    setName(e.target.value)
+  }
+
+  const handleChangePhone = (e) => {
+    setNumber(e.target.value)
+  }
+
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   return (
-    <div className={styles.parentModal}>
+    <motion.div
+    drag
+    dragConstraints={{
+      top: -150,
+      left: -150,
+      right: 150,
+      bottom: 150,
+    }} className={styles.parentModal}>
+
       <div className={styles.opacity_block}>
         <div className={styles.backgroundPhoto}>
-          <div className={styles.bookingWindow}>
+        <motion.div
+            variants={animationConfiguration}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.5 }}
+           className={styles.bookingWindow}>
+            
             <div onClick={() => handleOpenWindow()} className={styles.divX}>
-              <img src={xDelete} alt="x" className={styles.imgX} />
+            <motion.img
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+               src={xDelete} alt="x" className={styles.imgX} />
             </div>
 
             <div className={styles.divLogo}>
-              <img src={logo} alt="logo" className={styles.imgLogo} />
+              <img
+               src={logo} alt="logo" className={styles.imgLogo} />
             </div>
 
             <div className={styles.divTextBooking}>
@@ -39,29 +90,44 @@ function ModalWindow({ setModalWindow, modalWindow }) {
             </div>
 
             <div className={styles.divInpName}>
-              <input type="text" placeholder=" Имя" className={styles.inpName} />
+              <input type="text" placeholder=" Имя" onChange={handleChangeName} className={styles.inpName} />
             </div>
 
             <div className={styles.divInpPhone}>
-              <input type="text" placeholder=" Телефон" className={styles.inpPhone} />
+              <input type="text" placeholder=" Телефон" onChange={handleChangePhone} className={styles.inpPhone} />
             </div>
 
             <div className={styles.divBtnTableAndTime}>
-              <button className={styles.btnTable}>Столик</button>
+            <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={styles.btnTable}>Столик</motion.button>
 
-              <button className={styles.btnTime} onClick={handleOpenWindowDate}>
+              <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+               className={styles.btnTime} onClick={handleOpenWindowDate}>
                 Время
-              </button>
-              {openWindowDate && <div className={styles.divWindowBooking}><Booking /></div>}
+              </motion.button>
+              {openWindowDate && (
+                <div className={styles.divWindowBooking}>
+                  <Booking
+                    setOpenWindowDate={setOpenWindowDate}
+                    setDateTime={setDateTime}
+                  />
+                </div>
+              )}
             </div>
-
             <div className={styles.divBtnBooking}>
-              <button className={styles.btnBooking}>Забронировать</button>
+            <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={styles.btnBooking} onClick={handleAddBooking}>Забронировать</motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

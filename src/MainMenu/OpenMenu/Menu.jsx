@@ -5,37 +5,57 @@ import x from "./files/eva_close-fill.png";
 import logoYouTube from "./files/Group.png";
 import logoVK from "./files/Vector (4).png";
 import logoTG from "./files/Vector (5).png";
+import { Link } from "react-router-dom";
 
-function Menu({setMenuWindow, menuWindow }) {
+import { motion } from "framer-motion"
+
+function Menu({ setMenuWindow, menuWindow }) {
   const handleOpenWindow = () => {
-    setMenuWindow(!menuWindow)
-  }
-  
+    setMenuWindow(!menuWindow);
+  };
+
   return (
     <div className={styles.parentDiv}>
       <div className={styles.frame1}>
         <img src={logotip} alt="logo" className={styles.imgLogo} />
 
-        <div  onClick={() => handleOpenWindow()} className={styles.xParent}>
-          <img src={x} alt="x" className={styles.imgX} />
+        <div onClick={() => handleOpenWindow()} className={styles.xParent}>
+          <motion.img 
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.9 }} 
+            src={x} alt="x" className={styles.imgX} />
         </div>
-
       </div>
 
-
       <div className={styles.frame2}>
-        <div className={styles.textMenu}>Меню</div>
-        <div className={styles.textDelivery}>Доставка</div>
-        <div className={styles.textPayment}>Оплата</div>
-        <button className={styles.btnTableReservation}>Бронь столика</button>
+        <Link className={styles.linkTextMenu} to="/">
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}        
+            className={styles.textMenu}>На главную</motion.div>
+        </Link>
+        <Link className={styles.linkMenu} to="/products">
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }} 
+            className={styles.textDelivery}>Меню</motion.div>
+        </Link>
+        <motion.div 
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }} 
+          className={styles.textPayment}>Оплата</motion.div>
+        <motion.button 
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }} 
+          className={styles.btnTableReservation}>Бронь столика</motion.button>
       </div>
 
       <div className={styles.frame3}>
-          <img src={logoYouTube} alt="YouTube" className={styles.imgYouTube} />
+        <img src={logoYouTube} alt="YouTube" className={styles.imgYouTube} />
 
-          <img src={logoVK} alt="VK" className={styles.imgVK} />
+        <img src={logoVK} alt="VK" className={styles.imgVK} />
 
-          <img src={logoTG} alt="TG" className={styles.imgTG} />
+        <img src={logoTG} alt="TG" className={styles.imgTG} />
       </div>
     </div>
   );
