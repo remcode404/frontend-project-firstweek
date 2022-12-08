@@ -1,4 +1,9 @@
-import './App.scss';
+
+import "./App.scss";
+import AppMain from "./MainMenu/AppMain";
+import Window from "./Authorization/AuthorizationWindow/Window";
+import Entry from "./Authorization/EntryWindow/Entry";
+import Modal from "./OpenModal/Modal";
 
 import AppMain from './MainMenu/AppMain';
 import { Routes, Route } from 'react-router-dom';
