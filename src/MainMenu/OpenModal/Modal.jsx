@@ -54,14 +54,7 @@ function ModalWindow({ setModalWindow, modalWindow }) {
   };
 
   return (
-    <motion.div
-    drag
-    dragConstraints={{
-      top: -150,
-      left: -150,
-      right: 150,
-      bottom: 150,
-    }} className={styles.parentModal}>
+    <div className={styles.parentModal}>
 
       <div className={styles.opacity_block}>
         <div className={styles.backgroundPhoto}>
@@ -127,7 +120,7 @@ function ModalWindow({ setModalWindow, modalWindow }) {
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

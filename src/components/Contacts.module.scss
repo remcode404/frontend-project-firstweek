@@ -32,10 +32,12 @@ justify-content: space-around;
         justify-content: center;
         width: 120px;
         height: 40px;
-transition: 0.5s;
+        transition: 0.5s;
+
         &:hover{
-        background-color: #B59571;
-        border: none;
+          cursor: pointer;
+          background-color: #B59571;
+          border: none;
         }
         }
 
@@ -132,7 +134,7 @@ color: white;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-color: #b59571;
+        color: #b59571;
         .Kurchaloy {
           margin-top: 20px;
         
