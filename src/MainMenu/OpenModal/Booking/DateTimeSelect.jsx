@@ -3,8 +3,15 @@ import moment from 'moment';
 import localization from 'moment/locale/ru';
 import style from './dateTimeSelect.module.scss';
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
 const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   const [day, setDay] = useState('');
   const [monthYear, setMonthYear] = useState(moment().format('MM-YYYY'));
   const [time, setTime] = useState('09:00');
@@ -124,21 +131,36 @@ const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
   };
 
   return (
-    <div>
+    <motion.div
+            variants={animationConfiguration}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.5 }}>
       <div className={style.booking}>
         <div className={style.date_booking}>
           <p className={style.selectedDate}>{`Введенная дата: ${!date ? '00-00-0000' : date}`}</p>
           <div className={style.calendar}>
             <div className={style.switchMonth}>
-              <button className={style.month_substract} onClick={handleSubstractValueMonth}>
+
+              <motion.button 
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className={style.month_substract} onClick={handleSubstractValueMonth}>
                 {'<'}
-              </button>
+              </motion.button>
+
               <span className={style.month_year}>
                 {moment(monthYear, 'MM YYYY').format('MMMM YYYY')}
               </span>
-              <button className={style.month_add} onClick={handleAddValueMonth}>
+
+              <motion.button 
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className={style.month_add} onClick={handleAddValueMonth}>
                 {'>'}
-              </button>
+              </motion.button>
+
             </div>
             <div className={style.week_booking}>
               {weekDayNames.map((week) => (
@@ -152,19 +174,29 @@ const BookingTable = ({ setOpenWindowDate, setDateTime}) => {
           </div>
         </div>
         <div className={style.time_booking}>
-          <button className={style.close_window_but} onClick={handleCloseWindow}>
+
+          <motion.button  
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.95 }}
+              className={style.close_window_but} onClick={handleCloseWindow}>
             x
-          </button>
+          </motion.button>
+
           <p className={style.selectedTime}>{`Выбранное время: ${time}`}</p>
           <div className={style.time_select}>{printTimeInDays()}</div>
         </div>
       </div>
       <div className={style.submit_data}>
-        <button className={style.submit_data_button} onClick={handleSubmitData}>
+
+        <motion.button  
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className={style.submit_data_button} onClick={handleSubmitData}>
           Отправить дату и время
-        </button>
+        </motion.button>
+
       </div>
-    </div>
+    </motion.div>
   );
 };
 
