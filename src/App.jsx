@@ -1,17 +1,18 @@
-import './App.scss';
+import "./App.scss";
 // import AppMain from "./MainMenu/AppMain";
-import Window from './Authorization/AuthorizationWindow/Window';
-// import Entry from "./Authorization/EntryWindow/Entry";=
+// import Window from "./Authorization/AuthorizationWindow/Window";
+import Entry from "./Authorization/EntryWindow/Entry";
 
-import AppMain from './MainMenu/AppMain';
-import { Routes, Route } from 'react-router-dom';
-import ProductPage from './pages/ProductPage';
+import AppMain from "./MainMenu/AppMain";
+import { Routes, Route } from "react-router-dom";
+import ProductPage from "./pages/ProductPage";
+
 function App() {
   return (
     <div className="app">
       <Routes>
         <Route path="/" element={<AppMain />} />
-        <Route path="/products" element={<ProductPage />} />
+        <Route path="/entry" element={<Entry />} />
       </Routes>
     </div>
   );
