@@ -6,6 +6,7 @@ import Booking from './Booking/DateTimeSelect';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBooking, fetchBooking } from '../../reducers/Slice/bookingSlice';
 import NumberTableModal from './Booking/NumberTableModal';
+import { motion } from "framer-motion";
 
 function ModalWindow({ setModalWindow, modalWindow }) {
   const [openWindowDate, setOpenWindowDate] = useState(false);
@@ -62,17 +63,42 @@ function ModalWindow({ setModalWindow, modalWindow }) {
     setNumber(e.target.value);
   };
 
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   return (
-    <div className={styles.parentModal}>
+    <motion.div
+    drag
+    dragConstraints={{
+      top: -150,
+      left: -150,
+      right: 150,
+      bottom: 150,
+    }} className={styles.parentModal}>
+
       <div className={styles.opacity_block}>
         <div className={styles.backgroundPhoto}>
-          <div className={styles.bookingWindow}>
+        <motion.div
+            variants={animationConfiguration}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.5 }}
+           className={styles.bookingWindow}>
+            
             <div onClick={() => handleOpenWindow()} className={styles.divX}>
-              <img src={xDelete} alt="x" className={styles.imgX} />
+            <motion.img
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+               src={xDelete} alt="x" className={styles.imgX} />
             </div>
 
             <div className={styles.divLogo}>
-              <img src={logo} alt="logo" className={styles.imgLogo} />
+              <img
+               src={logo} alt="logo" className={styles.imgLogo} />
             </div>
 
             <div className={styles.divTextBooking}>
@@ -98,16 +124,22 @@ function ModalWindow({ setModalWindow, modalWindow }) {
             </div>
 
             <div className={styles.divBtnTableAndTime}>
-              <button className={styles.btnTable} onClick={handleOpenWindowNumber}>Столик</button>
+              <motion.button whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles.btnTable} 
+              onClick={handleOpenWindowNumber}>Столик</motion.button>
               {openNumberWindow && (
                 <div className={styles.divWindowNumber}>
                   <NumberTableModal setNumberTable={setNumberTable} setOpenNumberWindow={setOpenNumberWindow}/>
                 </div>
               )}
 
-              <button className={styles.btnTime} onClick={handleOpenWindowDate}>
+              <motion.button 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={styles.btnTime} onClick={handleOpenWindowDate}>
                 Время
-              </button>
+              </motion.button>
               {openWindowDate && (
                 <div className={styles.divWindowBooking}>
                   <Booking setOpenWindowDate={setOpenWindowDate} setDateTime={setDateTime} />
@@ -115,14 +147,16 @@ function ModalWindow({ setModalWindow, modalWindow }) {
               )}
             </div>
             <div className={styles.divBtnBooking}>
-              <button className={styles.btnBooking} onClick={handleAddBooking}>
+              <motion.button whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles.btnBooking} onClick={handleAddBooking}>
                 Забронировать
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
