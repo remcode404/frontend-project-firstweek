@@ -7,6 +7,8 @@ import logoVK from "./files/Vector (4).png";
 import logoTG from "./files/Vector (5).png";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion"
+
 function Menu({ setMenuWindow, menuWindow }) {
   const handleOpenWindow = () => {
     setMenuWindow(!menuWindow);
@@ -18,19 +20,34 @@ function Menu({ setMenuWindow, menuWindow }) {
         <img src={logotip} alt="logo" className={styles.imgLogo} />
 
         <div onClick={() => handleOpenWindow()} className={styles.xParent}>
-          <img src={x} alt="x" className={styles.imgX} />
+          <motion.img 
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.9 }} 
+            src={x} alt="x" className={styles.imgX} />
         </div>
       </div>
 
       <div className={styles.frame2}>
         <Link className={styles.linkTextMenu} to="/">
-          <div className={styles.textMenu}>На главную.</div>
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}        
+            className={styles.textMenu}>На главную</motion.div>
         </Link>
         <Link className={styles.linkMenu} to="/products">
-          <div className={styles.textDelivery}>Меню</div>
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }} 
+            className={styles.textDelivery}>Меню</motion.div>
         </Link>
-        <div className={styles.textPayment}>Оплата</div>
-        <button className={styles.btnTableReservation}>Бронь столика</button>
+        <motion.div 
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }} 
+          className={styles.textPayment}>Оплата</motion.div>
+        <motion.button 
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }} 
+          className={styles.btnTableReservation}>Бронь столика</motion.button>
       </div>
 
       <div className={styles.frame3}>

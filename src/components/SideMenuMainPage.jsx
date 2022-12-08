@@ -4,6 +4,7 @@ import youtube from "../MainMenu/files/youtube.svg";
 import telegram from "../MainMenu/files/telegram.svg";
 import logo from "../MainMenu/files/logo.svg";
 import btnLogo from "../MainMenu/files/btnLogo.svg";
+import { motion } from "framer-motion"
 
 function SideMenuMainPage({menuWindow, setMenuWindow }) {
 
@@ -17,9 +18,12 @@ const handleOpenWindow = () => {
     <div className={styles.sideMenu}>
       <div className={styles.logo}>
         <img className={styles.logos} src={logo} alt="" />
-        <button onClick={() => handleOpenWindow()} className={styles.btnLogo}>
-          <img className={styles.btnLogos} src={btnLogo} alt="" />
-        </button>
+        <motion.button 
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => handleOpenWindow()} className={styles.btnLogo}>
+            <img className={styles.btnLogos} src={btnLogo} alt="logo" />
+        </motion.button>
       </div>
 
       <div className={styles.socialNetworks}>
