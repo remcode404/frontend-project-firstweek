@@ -3,7 +3,7 @@ import styles from './Modal.module.scss';
 import xDelete from './filesModal/eva_close-fill.png';
 import logo from './filesModal/logo.png';
 import Booking from './Booking/DateTimeSelect';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBooking, fetchBooking } from '../../reducers/Slice/bookingSlice';
 import NumberTableModal from './Booking/NumberTableModal';
 import { motion } from 'framer-motion';
@@ -17,7 +17,6 @@ function ModalWindow({ setModalWindow, modalWindow }) {
   const [dateTime, setDateTime] = useState({ date: '00-00-0000', time: '00:00' });
   const [numberTable, setNumberTable] = useState();
   const [isEqualDataBooking, setIsEqualDataBooking] = useState(false);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -178,7 +177,7 @@ function ModalWindow({ setModalWindow, modalWindow }) {
           </motion.div>
         </div>
       </div>
-    </motion.div>
+      </motion.div>
   );
 }
 

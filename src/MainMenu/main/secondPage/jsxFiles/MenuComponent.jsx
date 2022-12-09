@@ -1,6 +1,8 @@
 import style from "./../scssFiles/MenuComponent.module.scss";
 import firstrectengle from "../../../files/Rectangle1.png";
 import secondRectengle from "../../../files/Rectangle2.png";
+import { motion } from "framer-motion"
+
 function MenuComponent() {
   return (
     <div className={style.our}>
@@ -27,14 +29,20 @@ function MenuComponent() {
         </div>
         <div className={style.rectangles}>
           <div className={style.firstRectangles}>
-            <img
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
               className={style.firstrectengle}
               src={firstrectengle}
               alt="f"
             />
           </div>
           <div className={style.secondRectangles}>
-            <img
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
               className={style.secondRectengle}
               src={secondRectengle}
               alt="f"
