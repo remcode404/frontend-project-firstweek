@@ -6,16 +6,27 @@ import logoYouTube from "./files/Group.png";
 import logoVK from "./files/Vector (4).png";
 import logoTG from "./files/Vector (5).png";
 import { Link } from "react-router-dom";
-
 import { motion } from "framer-motion"
 
 function Menu({ setMenuWindow, menuWindow }) {
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 1 },
+  };
+
   const handleOpenWindow = () => {
     setMenuWindow(!menuWindow);
   };
 
   return (
-    <div className={styles.parentDiv}>
+    <motion.div 
+    variants={animationConfiguration}
+    initial="initial"
+    animate="animate"
+    exit="exit"
+    transition={{ duration: 0.5 }}
+      className={styles.parentDiv}>
       <div className={styles.frame1}>
         <img src={logotip} alt="logo" className={styles.imgLogo} />
 
@@ -57,7 +68,7 @@ function Menu({ setMenuWindow, menuWindow }) {
 
         <img src={logoTG} alt="TG" className={styles.imgTG} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,0 +1,72 @@
+.number_table {
+  width: 400px;
+  height: 450px;
+  background-color: #333333;
+  border: 1px solid #5b5b5b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  .number_text_button {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    .number_text{
+      color: white;
+      padding-top: 20px;
+      font-size: 19px;
+    }
+    .number_button {
+      color: #b59571;
+      background-color: transparent;
+      font-size: 30px;
+      border: none;
+      line-height: 0px;
+      height: 50px;
+    }
+  }
+  .divNT {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    .table {
+      width: 28%;
+      height: 28%;
+      background-color: #74543d;
+      border: 1px solid #7b7a7a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .table_square {
+        width: 75%;
+        height: 75%;
+        border: 1px solid #7b7a7a;
+        border-radius: 5px;
+        background-color: #515151;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .circle {
+          border-radius: 50px;
+          width: 90%;
+          height: 90%;
+          background-color: #b59571;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 30px;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            background-color: #ab9276;
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+}

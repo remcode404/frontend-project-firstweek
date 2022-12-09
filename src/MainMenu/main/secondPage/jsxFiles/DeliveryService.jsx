@@ -1,4 +1,6 @@
 import styles from "../scssFiles/DeliveryService.module.scss";
+import { motion } from "framer-motion"
+
 function DeliveryService() {
   return (
     <div className={styles.our}>
@@ -28,8 +30,15 @@ function DeliveryService() {
               enim elementum euismod sapien.
             </p>
        <div className={styles.ServicesButtons}>
-            <button className={styles.serviceButton}>Подробнее</button>
-            <button className={styles.ifServicesButton} >Условия доставки</button>
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles.serviceButton}>Подробнее</motion.button>
+
+            <motion.button 
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles.ifServicesButton} >Условия доставки</motion.button>
        </div>
             </div>
            

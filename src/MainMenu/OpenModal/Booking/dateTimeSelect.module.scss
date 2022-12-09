@@ -1,5 +1,5 @@
 .booking {
-  width: 100%;
+  width: 110%;
   background-color: #333333;
   display: flex;
   color: white;
@@ -23,9 +23,10 @@
     border: none;
     color: white;
     width: 35px;
+    padding-bottom: 4px;
   }
   .month_year {
-
+    padding-bottom: 0.1px;
   }
   .month_add {
     background-color: #B59571;
@@ -33,6 +34,7 @@
     border: none;
     color: white;
     width: 35px;
+    padding-bottom: 4px;
   }
 }
 
@@ -46,6 +48,7 @@
 }
 
 .week_switch {
+  padding-bottom: 1px;
 }
 
 .booking_days {
@@ -120,7 +123,7 @@
 }
 
 .submit_data {
-  width: 100%;
+  width: 110%;
   background-color: #333333;
   display: flex;
   justify-content: flex-end;
@@ -128,6 +131,7 @@
   border-right: 1px solid #5b5b5b;
   border-bottom: 1px solid #5b5b5b;
   .submit_data_button {
+    padding-bottom: 5px;
     background-color: #B59571;
     color: white;
     width: 200px;

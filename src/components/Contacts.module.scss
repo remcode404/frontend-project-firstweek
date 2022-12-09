@@ -17,7 +17,7 @@ display: flex;
 flex-direction: column;
 height: 230px;
 justify-content: space-around;
-margin-left: 30px;
+margin-left: 20px;
 
 .buttonsAdress{
 width: 290px;
@@ -30,12 +30,14 @@ justify-content: space-around;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 120px;
+        width: 130px;
         height: 40px;
-transition: 0.5s;
+        transition: 0.5s;
+
         &:hover{
-        background-color: #B59571;
-        border: none;
+          cursor: pointer;
+          background-color: #B59571;
+          border: none;
         }
         }
 
@@ -132,7 +134,7 @@ color: white;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-color: #b59571;
+        color: #b59571;
         .Kurchaloy {
           margin-top: 20px;
         
