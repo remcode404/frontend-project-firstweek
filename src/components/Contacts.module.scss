@@ -11,6 +11,7 @@ z-index: 2;
 left: 360px;
 opacity: 1;
 margin-top: 20px;
+left: 390px;
 
 .adresTime{
 display: flex;
@@ -155,4 +156,11 @@ color: white;
       height: 300px;
     }
   }
+}
+
+
+.parentYmapAndBlock {
+  display: flex;
+  justify-content: center;
+  // padding-left: 120px;
 }
