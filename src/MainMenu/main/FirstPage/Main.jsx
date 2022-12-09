@@ -5,9 +5,19 @@ import SideMenuMainPage from "../../../components/SideMenuMainPage";
 import TextMenuMainPage from "./TextMenuMainPage";
 import Menu from "../../OpenMenu/Menu";
 import ModalWindow from "../../OpenModal/Modal";
+import Entry from '../../../Authorization/EntryWindow/Entry'
+import Window from "../../../Authorization/AuthorizationWindow/Window";
+
 function Main() {
   const [menuWindow, setMenuWindow] = useState(false);
   const [modalWindow, setModalWindow] = useState(false);
+
+  const [entryWindow, setEntryWindow] = useState(false)
+
+  const [registration, setRegistration] = useState(false)
+
+
+
 
   return (
     <div className={styles.Main}>
@@ -31,10 +41,16 @@ function Main() {
             />
           ) : null}
         </div>
+
+        {entryWindow ? ( <div className={styles.entryWindow}>  <Entry registration={registration} setRegistration={setRegistration}  entryWindow={entryWindow} setEntryWindow={setEntryWindow} /> </div>): null}   
+        {registration ? ( <div className={styles.entryWindow}>  <Window  entryWindow={entryWindow} setEntryWindow={setEntryWindow}  registration={registration} setRegistration={setRegistration} /> </div>): null }
+
         <h1 className={styles.restoranName}>
           Видовой ресторан Food Exxe Relo на Крестовском острове.
         </h1>
         <TextMenuMainPage
+         entryWindow={entryWindow}
+          setEntryWindow={setEntryWindow}
           setModalWindow={setModalWindow}
           modalWindow={modalWindow}
         />

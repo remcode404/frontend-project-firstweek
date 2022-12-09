@@ -10,6 +10,7 @@ import { fetchCategory } from "../reducers/Slice/categorySlice";
 import { fetchProducts } from "../reducers/Slice/productSlice";
 import Menu from "../MainMenu/OpenMenu/Menu";
 import Lottie from "lottie-react";
+
 function ProductPage() {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.categoryReducer.category);
@@ -120,7 +121,7 @@ function ProductPage() {
         </header>
       </div>
 
-      <div>
+      <div className={style.ContactsComponentMenu}>
         <ContactsComponent />
       </div>
       <Footer />

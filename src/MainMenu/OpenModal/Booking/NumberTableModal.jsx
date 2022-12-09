@@ -1,8 +1,15 @@
 import React from 'react';
 import style from './numberTableModal.module.scss';
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
 const NumberTableModal = ({ setNumberTable, setOpenNumberWindow }) => {
+  const animationConfiguration = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   const handleAddNumber = (number) => {
     setNumberTable(number);
   };
@@ -26,11 +33,14 @@ const NumberTableModal = ({ setNumberTable, setOpenNumberWindow }) => {
       let isActive = isSelect ? {background: 'gray'} : {}
       return (
         <div key={number} className={style.table}>
-          <div className={style.table_square}>
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={style.table_square}>
             <button className={style.circle} disabled={isSelect} style={isActive} onClick={() => handleAddNumber(number + 1)}>
               {number + 1}
             </button>
-          </div>
+          </motion.div>
         </div>
       )
     } 
@@ -38,7 +48,14 @@ const NumberTableModal = ({ setNumberTable, setOpenNumberWindow }) => {
   )};
 
   return (
-    <div className={style.number_table}>
+    <motion.div 
+    variants={animationConfiguration}
+    initial="initial"
+    animate="animate"
+    exit="exit"
+    transition={{ duration: 0.5 }}
+      className={style.number_table}>
+
       <div className={style.number_text_button}>
         <p className={style.number_text}>Номер столика: </p>
         <button className={style.number_button} onClick={handleCloseWindowTable}>
@@ -46,7 +63,7 @@ const NumberTableModal = ({ setNumberTable, setOpenNumberWindow }) => {
         </button>
       </div>
       <div className={style.divNT}>{showTable()}</div>
-    </div>
+    </motion.div>
   );
 };
 

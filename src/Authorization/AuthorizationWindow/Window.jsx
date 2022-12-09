@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { authSignUp } from "../../reducers/Slice/registrationSlice";
 import { motion } from "framer-motion";
 
-function Window() {
+function Window({registration, setRegistration, entryWindow, setEntryWindow}) {
   const [phone, setPhone] = useState("");
   const [usersName, setUsersName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,6 +18,11 @@ function Window() {
   const handleSignUp = (e) => {
     e.preventDefault();
     dispatch(authSignUp({ phone, email, usersName, password }));
+  };
+
+  const handlebtnLogin =() => {
+    setEntryWindow(true)
+    setRegistration(false)
   }
 
   const animationConfiguration = {
@@ -52,9 +57,10 @@ function Window() {
             className={styles.imgX}
             src={authX}
             alt="x"
+            onClick={() => setRegistration(false)}
           />
         </div>
-        /////////
+
         <div className={styles.divLogo}>
           <img className={styles.imgLogo} src={logo} alt="logo" />
         </div>
@@ -119,6 +125,7 @@ function Window() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className={styles.btnLogin}
+            onClick={() => handlebtnLogin()}
           >
             Войти
           </motion.button>
