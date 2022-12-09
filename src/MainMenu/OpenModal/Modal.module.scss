@@ -75,6 +75,12 @@
             color: white;
           }
         }
+        
+        .error_div_bookingdata {
+          line-height: 0px;
+          color: white;
+          text-align: center;
+        }
 
         .divBtnTableAndTime {
           height: 15%;
@@ -90,6 +96,11 @@
             border: none;
             border: 1px solid white;
             color: white;
+          }
+
+          .divWindowNumber {
+            position: absolute;
+            top: 100px;
           }
 
           .btnTime {
