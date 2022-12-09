@@ -8,7 +8,7 @@ import { authSignUp } from "../../reducers/Slice/registrationSlice";
 
 import { motion } from "framer-motion";
 
-function Window() {
+function Window({registration, setRegistration, entryWindow, setEntryWindow}) {
   const [phone, setPhone] = useState("");
   const [usersName, setUsersName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,6 +21,10 @@ function Window() {
     dispatch(authSignUp({ phone, email, usersName, password }));
   };
 
+  const handlebtnLogin =() => {
+    setEntryWindow(true)
+    setRegistration(false)
+  }
 
   const animationConfiguration = {
     initial: { opacity: 0 },
@@ -54,9 +58,10 @@ function Window() {
             className={styles.imgX}
             src={authX}
             alt="x"
+            onClick={() => setRegistration(false)}
           />
         </div>
-/////////
+
         <div className={styles.divLogo}>
           <img className={styles.imgLogo} src={logo} alt="logo" />
         </div>
@@ -128,6 +133,7 @@ function Window() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className={styles.btnLogin}
+            onClick={() => handlebtnLogin()}
           >
             Войти
           </motion.button>

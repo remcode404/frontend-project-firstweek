@@ -121,7 +121,7 @@ function ProductPage() {
         </header>
       </div>
 
-      <div>
+      <div className={style.ContactsComponentMenu}>
         <ContactsComponent />
       </div>
       <Footer />

@@ -1,6 +1,6 @@
 .Main {
   width: 100%;
-
+position: relative;
   .openMenuWindow{
   width: 100%;
   position: absolute;
@@ -29,7 +29,10 @@
     height: 749px;
     background: url("../../files/Rectangle.png") no-repeat center top / cover;
     background-repeat: no-repeat;
-
+.entryWindow{
+position: absolute;
+left: 650px;
+}
     .textMenu {
       width: 540px;
       height: 42px;
@@ -38,12 +41,33 @@
       justify-content: space-between;
       margin-top: 30px;
       margin-right: 100px;
-
+      position: relative;
+.entryWindow{
+position: absolute;
+width: 500px;
+height: 500px;
+}
+.btnTextMenuAll{
+display: flex;
+width: 100px;
+border: none;
+background: none;
+color: #ffffff;
+}
+.btnMenuLink{
+  text-decoration: none;
+}
       .btnTextMenu {
+        width: 100px;
+        height: 20px;
         background: none;
+        display: flex;
+        align-items: center;
         border: none;
+      
         font-size: 18px;
         color: white;
+
       }
       .btnBron {
         background-color: #b59571;

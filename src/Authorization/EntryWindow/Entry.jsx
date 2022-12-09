@@ -6,12 +6,22 @@ import entryX from "../EntryWindow/files/eva_close-fill.png";
 import logo from "../EntryWindow/files/logo.png";
 import { motion } from "framer-motion";
 
-function Entry() {
+function Entry({entryWindow, setEntryWindow, registration, setRegistration}) {
+
   const animationConfiguration = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     exit: { opacity: 0 },
   };
+
+  const handleEntry = () => {
+  setEntryWindow(false)
+  }
+
+  const handleRegistration =() => {
+    setEntryWindow(false)
+    setRegistration(true)
+  }
 
   const [value, setValue] = useState("");
   const [password, setPassword] = useState("");
@@ -43,28 +53,18 @@ function Entry() {
   };
 
   return (
-    <motion.div drag
+    <div drag
     dragConstraints={{
       top: -150,
       left: -150,
       right: 150,
       bottom: 150,
     }} className={styles.entryParent}>
-      
-      <motion.div variants={animationConfiguration}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 1.5 }} className={styles.blockEntry}>
-        <div className={styles.divX}>
-          <motion.img
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.8 }}
-            className={styles.imgX}
-            src={entryX}
-            alt="x"
-          />
-        </div>
+      <div variants={animationConfiguration}
+        className={styles.blockEntry}>
+        <button className={styles.divX}  onClick={() => handleEntry()}   >
+          X
+        </button>
 
         <div className={styles.divLogo}>
           <img className={styles.imgLogo} src={logo} alt="logo" />
@@ -93,14 +93,15 @@ function Entry() {
             />
           </div>
           <div className={styles.blockBtnEntry}>
-            <motion.button whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }} className={styles.btnEntry} type="submit">
+          <button className={styles.registrationBtn} onClick={() => handleRegistration()} >зарегестрироваться</button>
+            <button 
+             className={styles.btnEntry} type="submit">
               Войти
-          </motion.button>
+          </button>
         </div>
         </form>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

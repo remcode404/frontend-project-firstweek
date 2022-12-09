@@ -1,23 +1,25 @@
 .entryParent {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .blockEntry {
-        width: 23%;
-        height: 50%;
-        background-color: #333333;
+  .blockEntry {
+    width: 300px;
+    height: 50%;
+    background-color: #333333;
 
-        .divX {
-            display: flex;
-            justify-content: flex-end;
-    
-            .imgX {
-                cursor: pointer;
-            }
-        }
+    .divX {
+      font-size: 30px;
+      width: 20px;
+      height: 20px;
+      background: none;
+      border: none;
+      color: #b59571;
+      .imgX {
+        cursor: pointer;
+      }
     
         .divLogo {
             display: flex;
@@ -93,4 +95,81 @@
             }
         }
     }
+
+    .divLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .blockEntryText {
+      height: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .entryText {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .blockInpLogin {
+      height: 16%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .inpLogin {
+        width: 70%;
+        height: 35px;
+        background-color: #333333;
+        border: none;
+        border: 1px solid white;
+        color: white;
+      }
+    }
+
+    .blockInpPassword {
+      height: 12%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .inpPassword {
+        width: 70%;
+        height: 35px;
+        background-color: #333333;
+        border: none;
+        border: 1px solid white;
+        color: white;
+      }
+    }
+
+    .blockBtnEntry {
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .registrationBtn {
+        background: none;
+        background-color: #b59571;
+        color: white;
+        width: 60%;
+        border: none;
+        height: 40px;
+      }
+      .btnEntry {
+        width: 60%;
+        height: 40px;
+        background-color: #b59571;
+        color: white;
+        font-weight: 400;
+        border: none;
+      }
+    }
+  }
 }
