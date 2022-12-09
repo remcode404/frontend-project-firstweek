@@ -40,6 +40,7 @@ function Entry() {
     if (error) {
       return <div>{error}</div>;
     }
+    console.log(error)
   };
 
   return (
@@ -64,7 +65,6 @@ function Entry() {
             alt="x"
           />
         </div>
-
         <div className={styles.divLogo}>
           <img className={styles.imgLogo} src={logo} alt="logo" />
         </div>
