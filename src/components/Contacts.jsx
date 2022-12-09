@@ -47,7 +47,8 @@ function ContactsComponent() {
             {/* end */}
           </div>
         </div>
-        <div>
+
+        <div className={style.parentYmapAndBlock}>
           <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
