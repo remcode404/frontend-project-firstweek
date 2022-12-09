@@ -50,6 +50,7 @@ function Entry() {
       right: 150,
       bottom: 150,
     }} className={styles.entryParent}>
+      
       <motion.div variants={animationConfiguration}
         initial="initial"
         animate="animate"
